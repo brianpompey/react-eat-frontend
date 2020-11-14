@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   return (
     <div id="app">
+      <Navbar />
       <Header />
       <Buttoner />
     </div>
