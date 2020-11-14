@@ -1,1 +1,17 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  font-size: 110px;
+  font-family: Lobster, monospace;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
