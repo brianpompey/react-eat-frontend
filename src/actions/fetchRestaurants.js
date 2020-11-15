@@ -28,7 +28,13 @@ class AllRestaurants extends Component {
     render() {
         console.log(this.state.restaurants);
         return(
-            <h4>Hello World</h4>
+            <div id="restaurant container">
+                <ul>
+                    {this.state.restaurants.map((rest) => (
+                        <li key={rest.id}><a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}</li>
+                    ))}
+                </ul>
+            </div>
         )
     }
 }
