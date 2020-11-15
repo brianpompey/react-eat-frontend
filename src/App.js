@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header.js';
 import Navbar from './components/Navbar.js';
-import Buttoner from './components/Button.js';
+import AllRestaurants from './actions/fetchRestaurants.js'
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div id="app">
       <Navbar />
       <Header />
-      <Buttoner />
+      <AllRestaurants />
     </div>
   );
 }

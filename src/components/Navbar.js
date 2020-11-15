@@ -5,15 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 const NavBar = () => {
     return (
       <Navbar bg="black" variant="dark" sticky="top">
-        <Navbar.Brand>
-        <img
-          src="./logo.png"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt=" "></img>
-        </Navbar.Brand>
-          <NavDropdown bg="black" title="Menu" id="collasible-nav-dropdown" style={{ color: "#5299d3" }}>
+        <NavDropdown bg="black" title="Menu" id="collasible-nav-dropdown" style={{ color: "#5299d3" }}>
           <NavDropdown.Item style={{ color: "#5299d3" }} href="/">Home</NavDropdown.Item>
           <NavDropdown.Item style={{ color: "#5299d3" }} href="/welcome">Admin</NavDropdown.Item>
           <NavDropdown.Item style={{ color: "#5299d3" }} href="/users">Users</NavDropdown.Item>
