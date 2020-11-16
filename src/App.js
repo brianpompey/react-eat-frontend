@@ -4,6 +4,7 @@ import Header from './components/Header.js';
 import Navbar from './components/Navbar.js';
 import UserForm from './components/UserForm.js';
 import AllRestaurants from './actions/fetchRestaurants.js'
+import {connect} from 'react-redux'
 import './App.css';
 
 function App() {

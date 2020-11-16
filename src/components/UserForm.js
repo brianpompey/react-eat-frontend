@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {addUsers} from '../actions/addUsers';
 
 
 class UserForm extends Component {
