@@ -1,21 +1,15 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    return (
-      <Navbar bg="black" variant="dark" sticky="top">
-        <NavDropdown bg="black" title="Menu" id="collasible-nav-dropdown" style={{ color: "#5299d3" }}>
-          <NavDropdown.Item style={{ color: "#5299d3" }} href="/">Home</NavDropdown.Item>
-          <NavDropdown.Item style={{ color: "#5299d3" }} href="/welcome">Admin</NavDropdown.Item>
-          <NavDropdown.Item style={{ color: "#5299d3" }} href="/users">Users</NavDropdown.Item>
-          <NavDropdown.Item style={{ color: "#5299d3" }} href="/lessons">Lessons</NavDropdown.Item>
-          <NavDropdown.Item style={{ color: "#5299d3" }} href="/challenges">Challenges</NavDropdown.Item>
-        </NavDropdown>    
-      </Navbar>
-    );
-  };
-
-
+  return (
+    <div className="navbar">
+      <ul>
+          <li><NavLink to="/newrestaurant">New Restaurant</NavLink></li>
+          <li<
+      </ul>
+    </div>
+  );
+};
 
 export default NavBar;

@@ -6,7 +6,10 @@ import {addRestaurants} from '../actions/addRestaurants';
 class NewRestaurantForm extends Component {
 
     state = {
-        name: ''
+        name: '',
+        website: '',
+        location: '',
+        cuisine: ''
     }
 
     handleChange = (event) => {
@@ -29,7 +32,7 @@ class NewRestaurantForm extends Component {
     render() {
         return (
           <div>
-            <h6>Hey There! What is your name?</h6>
+            <h6>New Restaurant</h6>
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
@@ -37,6 +40,27 @@ class NewRestaurantForm extends Component {
                 placeholder='Name'
                 onChange={this.handleChange}
                 value={this.state.name}
+              />
+              <input
+                type="text"
+                name="website"
+                placeholder='Website'
+                onChange={this.handleChange}
+                value={this.state.website}
+              />
+              <input
+                type="text"
+                name="location"
+                placeholder='Borough'
+                onChange={this.handleChange}
+                value={this.state.location}
+              />
+              <input
+                type="text"
+                name="cuisine"
+                placeholder='Cuisine'
+                onChange={this.handleChange}
+                value={this.state.cuisine}
               />
             </form>
           </div>
