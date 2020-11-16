@@ -20,12 +20,12 @@ function App() {
         <NavBar/>
         <Switch>
           <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
+          <Route exact path="/allrestaurants" component={AllRestaurants}/>
         </Switch>
       </div>
       <div id="container">
         <Header/>
         <UserForm />
-        <AllRestaurants />
       </div>
     </Router>
   );
