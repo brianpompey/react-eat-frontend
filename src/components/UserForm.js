@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {addUsers} from '../actions/addUsers';
 
 
@@ -40,4 +41,4 @@ class UserForm extends Component {
     }
 }
 
-export default UserForm;
+export default connect(null, {addUsers})(UserForm);

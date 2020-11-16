@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header.js';
 import Navbar from './components/Navbar.js';
 import UserForm from './components/UserForm.js';
-import AllRestaurants from './actions/fetchRestaurants.js'
+import AllRestaurants from './components/Restaurants.js'
 import {connect} from 'react-redux'
 import './App.css';
 
