@@ -7,25 +7,28 @@ import NewRestaurantForm from './components/NewRestaurantForm.js'
 import {connect} from 'react-redux'
 import {
   BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
+  Switch,
+  Route
+} from "react-router-dom";
 import NavBar from './components/NavBar.js';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="nav">
-        <NavBar/>
-        <Switch>
-          <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
-          <Route exact path="/allrestaurants" component={AllRestaurants}/>
-        </Switch>
+      <div>
+        <NavBar />
+
+        <hr />
+
       </div>
       <div id="container">
         <Header/>
         <UserForm />
+        <Switch>
+          <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
+          <Route exact path="/allrestaurants" component={AllRestaurants}/>
+        </Switch>
       </div>
     </Router>
   );
