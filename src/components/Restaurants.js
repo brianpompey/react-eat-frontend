@@ -29,10 +29,13 @@ class AllRestaurants extends Component {
     render() {
         console.log(this.state.restaurants);
         return(
-            <div id="restaurant container">
+            <div id="restaurant container" >
                 <ul>
                     {this.state.restaurants.map((rest) => (
-                        <li key={rest.id}><a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}</li>
+                        <>
+                        <li style={{textAlign: 'center'}} key={rest.id}><a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}</li>
+                        <br />
+                        </>
                     ))}
                 </ul>
             </div>

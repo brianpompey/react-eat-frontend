@@ -1,16 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header.js';
-import UserForm from './components/UserForm.js';
-import AllRestaurants from './components/Restaurants.js'
-import NewRestaurantForm from './components/NewRestaurantForm.js'
+import AllRestaurants from './components/Restaurants.js';
+import NewRestaurantForm from './components/NewRestaurantForm.js';
+import HomePage from './components/HomePage.js'
 import {connect} from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Link
 } from "react-router-dom";
-import NavBar from './components/NavBar.js';
+import NavBar from './components/Navbar.js';
 import './App.css';
 
 function App() {
@@ -21,13 +20,13 @@ function App() {
 
         <hr />
 
+
       </div>
       <div id="container">
-        <Header/>
-        <UserForm />
         <Switch>
-          <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
-          <Route exact path="/allrestaurants" component={AllRestaurants}/>
+          <Link exact path="/newrestaurant" component={NewRestaurantForm}/>
+          <Link exact path="/allrestaurants" component={AllRestaurants}/>
+          <Link exact path="/" component={HomePage}/>
         </Switch>
       </div>
     </Router>
