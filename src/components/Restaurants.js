@@ -1,46 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react'
+import {Route, Link} from 'react-router-dom'
 
+const Restaurants = (props) => {
 
-const api_url = "http://localhost:3000/api/v1/restaurants";
-
-class AllRestaurants extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            restaurants: []
-        }
-    }
-
-    componentDidMount() {
-        this.getRestaurants();
-    }
-
-    getRestaurants() {
-        fetch(api_url)
-        .then(resp => resp.json())
-        .then(response_items => {
-            this.setState({
-                restaurants: response_items
-            })
-        });
-    }
-
-    render() {
-        console.log(this.state.restaurants);
-        return(
-            <div id="restaurant container" >
-                <ul>
-                    {this.state.restaurants.map((rest) => (
-                        <>
-                        <li style={{textAlign: 'center'}} key={rest.id}><a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}</li>
-                        <br />
-                        </>
-                    ))}
-                </ul>
-            </div>
-        )
-    }
+  return (
+    <div>
+      {props.restaurants.map(rest =>
+        <>
+        <li style={{textAlign: 'center'}} key={rest.id}><a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}</li>
+        <br />
+        </>
+      )}
+    </div>
+    )
 }
 
-export default AllRestaurants;
+export default Restaurants;
