@@ -5,11 +5,11 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'; 
 import './index.css';
 import App from './App';
-import userReducer from './reducers/userReducer';
+import restaurantReducer from './reducers/restaurantReducer';
 import reportWebVitals from './reportWebVitals';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(userReducer, composeEnhancers(applyMiddleware(thunk)))
+let store = createStore(restaurantReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render(

@@ -62,6 +62,7 @@ class NewRestaurantForm extends Component {
                 onChange={this.handleChange}
                 value={this.state.cuisine}
               />
+              <input type="submit" />
             </form>
           </div>
         )

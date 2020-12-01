@@ -8,7 +8,7 @@ const initialState = {
     restaurants: []
 }
 
-export default function restaurantReducer (state=initialState, action) {
+export default function restaurantReducer (state = initialState, action) {
  
     switch(action.type){
         case 'FETCH_RESTAURANTS':

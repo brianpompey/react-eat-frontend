@@ -4,10 +4,11 @@ import {fetchRestaurants} from '../actions/fetchRestaurants'
 import {
     BrowserRouter as Router,
     Switch,
-    Link
+    Route
 } from "react-router-dom";
 import NewRestaurantForm from '../components/NewRestaurantForm.js';
 import HomePage from '../components/HomePage.js'
+import Restaurants from '../components/Restaurants.js'
 import NavBar from '../components/Navbar'
 
 class RestaurantsContainer extends Component {
@@ -25,9 +26,9 @@ class RestaurantsContainer extends Component {
                 </div>
                 <div id="container">
                     <Switch>
-                    <Link exact path="/newrestaurant" component={NewRestaurantForm}/>
-                    <Link exact path="/allrestaurants" render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>}/>
-                    <Link exact path="/" component={HomePage} />
+                    <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
+                    <Route exact path="/allrestaurants" render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>}/>
+                    <Route exact path="/" component={HomePage} />
                     </Switch>
                 </div>
             </Router>
