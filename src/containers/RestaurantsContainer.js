@@ -39,7 +39,7 @@ class RestaurantsContainer extends Component {
 
     const mapStateToProps = state => {
         return {
-          accounts: state.reataurants
+          restaurants: state.restaurants
         }
     }
 
