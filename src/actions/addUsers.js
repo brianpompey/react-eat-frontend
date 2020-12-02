@@ -12,7 +12,6 @@ export const addUsers = (data) => {
       .then(response => response.json())
       .then(
           user => dispatch({type: 'ADD_USER', payload: user}),
-          window.location.reload()
         )
     }
   

@@ -1,5 +1,4 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
 import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 const Restaurants = (props) => {

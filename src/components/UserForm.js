@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  Redirect
+} from "react-router-dom";
 import {addUsers} from '../actions/addUsers';
 
 
@@ -20,7 +23,9 @@ class UserForm extends Component {
         this.props.addUsers(this.state)
         this.setState({
           name: '',
-        })
+        });
+        <Redirect to="/newrestaurant" />
+
     }
     
     render() {
