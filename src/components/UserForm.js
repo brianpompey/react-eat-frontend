@@ -24,11 +24,19 @@ class UserForm extends Component {
         this.setState({
           name: '',
         });
-        <Redirect to="/newrestaurant" />
-
     }
+
+    /*
+    handleClick = (event) => {
+      event.preventDefault()
+      this.props.history.push('/newrestaurant');
+    }
+    */
     
     render() {
+        if (this.state.name !== "") {
+          return <Redirect to='/restaurantchoice' />
+        }
         return (
           <div>
             <h6>Hey There! What is your name?</h6>
@@ -40,6 +48,7 @@ class UserForm extends Component {
                 onChange={this.handleChange}
                 value={this.state.name}
               />
+             
             </form>
           </div>
         )

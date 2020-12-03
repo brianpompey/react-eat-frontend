@@ -1,4 +1,4 @@
-import react, { Component } from React;
+import React, { Component } from 'react';
 
 class RestaurantChoice extends Component {
 
@@ -12,9 +12,10 @@ class RestaurantChoice extends Component {
         })
     }
     
-    render() {
+    render(props) {
         return (
           <div>
+            <h6>Hello {props} !!</h6>
             <h6>What are you craving Today?</h6>
             <form>
               <input
