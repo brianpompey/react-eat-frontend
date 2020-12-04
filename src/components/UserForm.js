@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Redirect
-} from "react-router-dom";
+import { withRouter } from 'react-router-dom'
 import {addUsers} from '../actions/addUsers';
 
 
@@ -24,6 +22,7 @@ class UserForm extends Component {
         this.setState({
           name: '',
         });
+        this.props.history.push('/restaurantchoice');
     }
 
     /*
@@ -31,12 +30,13 @@ class UserForm extends Component {
       event.preventDefault()
       this.props.history.push('/newrestaurant');
     }
+
+    if (this.state.name === this.props.name) {
+          return <Redirect to='/restaurantchoice' />
+        }
     */
     
     render() {
-        if (this.state.name === this.props.name) {
-          return <Redirect to='/restaurantchoice' />
-        }
         return (
           <div>
             <h6>Hey There! What is your name?</h6>
@@ -55,4 +55,4 @@ class UserForm extends Component {
     }
 }
 
-export default connect(null, {addUsers})(UserForm);
+export default withRouter(connect(null, {addUsers})(UserForm));
