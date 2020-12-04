@@ -34,7 +34,7 @@ class UserForm extends Component {
     */
     
     render() {
-        if (this.state.name !== "") {
+        if (this.state.name === this.props.name) {
           return <Redirect to='/restaurantchoice' />
         }
         return (
