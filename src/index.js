@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'; 
 import './index.css';
 import App from './App';
-import restaurantReducer from './reducers/restaurantReducer';
+import combineReducers from './reducers/index.js';
+import restaurantReducer from './reducers/restaurantReducer.js';
 import reportWebVitals from './reportWebVitals';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

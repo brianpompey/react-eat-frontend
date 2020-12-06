@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import RestaurantsContainer from '../containers/RestaurantsContainer.js'
+import SearchBar from './SearchBar.js'
 
 class RestaurantChoice extends Component {
 
@@ -15,17 +17,10 @@ class RestaurantChoice extends Component {
     render(props) {
         return (
           <div>
-            <h6>Hello {props} !!</h6>
+            <h6>Hello !!</h6>
             <h6>What are you craving Today?</h6>
-            <form>
-              <input
-                type="text"
-                name="name"
-                placeholder='Name'
-                onChange={this.handleChange}
-                value={this.state.name}
-              />
-            </form>
+            
+            <SearchBar {...props}/>
           </div>
         )
     }
