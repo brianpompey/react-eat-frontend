@@ -1,20 +1,57 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import OrderSelection from '../components/OrderSelection.js'
+import {fetchRestaurants} from '../actions/fetchRestaurants'
+import {addSelection} from '../actions/addSelection'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import NavBar from '../components/Navbar'
+import HomePage from '../components/HomePage.js'
+import Restaurants from '../components/Restaurants.js'
+import OrderSelection from '../components/OrderSelection';
+import NewRestaurantForm from '../components/NewRestaurantForm.js';
+import RestaurantChoice from '../components/RestaurantChoice';
+
 
 class SelectionsContainer extends Component {
 
+    componentDidMount() {
+        this.props.fetchRestaurants();
+    }
 
     render() {
-      return (
-        <div>
-            <OrderSelection restaurant={this.props.restaurant}/><br/>
-        </div>
-      )
-  
-    }
-  
-  }
-  
-export default SelectionsContainer;
+        return (
+            <Router>
+                <div>
+                    <NavBar />
+                    <hr />
+                </div>
+                <div id="container">
+                    <Switch>
+                    <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
+                    <Route exact path="/allrestaurants" render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>}/>
+                    <Route exact path="/restaurantchoice" render={(props) => <RestaurantChoice {...props} names={this.props.name}/>}/>
+                    <Route exact path="/restaurant/:id" render={(props) => <OrderSelection id={props.match.params.id} /> } />
+                    <Route exact path="/" component={HomePage} />
 
+                    </Switch>
+                </div>
+            </Router>
+        )
+    }
+
+}
+
+    const mapStateToProps = state => {
+        return {
+          restaurants: state.restaurants
+        }
+    }
+
+
+
+
+
+export default connect(mapStateToProps, {fetchRestaurants})(SelectionsContainer);

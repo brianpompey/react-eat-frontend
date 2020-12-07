@@ -28,12 +28,12 @@ export default function restaurantReducer(state = initialState, action) {
                 }
             })
             return {...state, restaurants: restaurants}
-        case 'DELETE_TRANSACTION':
+        case 'DELETE_SELECTION':
             let restaurantss = state.restaurants.map(restaurant => {
                 if (restaurant.id === action.payload.id) {
                     return action.payload
                 } else {
-                    return account
+                    return restaurant
                 }
             })
             return {...state, restaurants: restaurantss}

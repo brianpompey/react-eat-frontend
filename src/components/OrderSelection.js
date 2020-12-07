@@ -10,13 +10,13 @@ class OrderSelection extends Component {
 
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            order: event.target.value
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addSelection(this.state, this.props.restaurant.id)
+        this.props.addSelection(this.state.order, this.props.id)
         this.setState({
           order: ''
         })

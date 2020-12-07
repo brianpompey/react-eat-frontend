@@ -1,4 +1,4 @@
-export const addSelection = (selection, restaurantId) => {
+export const addSelection = (order, restaurantId) => {
 
     return (dispatch) => {
       fetch(`http://localhost:3000/api/v1/restaurants/${restaurantId}/selections`, {
@@ -6,7 +6,7 @@ export const addSelection = (selection, restaurantId) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(selection)
+        body: JSON.stringify({selection: {order} })
       })
       .then(response => response.json())
       .then(restaurant => {

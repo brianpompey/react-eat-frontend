@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FilterResults from 'react-filter-search';
+import { addSelection } from "../actions/addSelection.js";
 import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 
@@ -36,7 +37,8 @@ class SearchBar extends Component {
                 <div>
                   {results.map(el => (
                     <div>
-                      <span><a href={el.website} target="_blank" rel="noreferrer">{el.name}</a></span> - <span>{el.location}</span> - <span>{el.cuisine}</span>
+                      {console.log({el})}
+                      <span><a href={`/restaurant/${el.id}`}>{el.name}</a></span> - <span>{el.location}</span> - <span>{el.cuisine}</span>
                     </div>
                   ))}
                 </div>
