@@ -10,12 +10,8 @@ export const addSelection = (order, restaurantId) => {
       })
       .then(response => response.json())
       .then(restaurant => {
-          if (restaurant.error) {
-            alert(restaurant.error)
-          } else {
             dispatch({type: 'ADD_SELECTION', payload: restaurant})
           }
-        }
       )
     }
   }

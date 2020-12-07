@@ -1,57 +1,36 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {fetchRestaurants} from '../actions/fetchRestaurants'
-import {addSelection} from '../actions/addSelection'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-import NavBar from '../components/Navbar'
-import HomePage from '../components/HomePage.js'
-import Restaurants from '../components/Restaurants.js'
-import OrderSelection from '../components/OrderSelection';
-import NewRestaurantForm from '../components/NewRestaurantForm.js';
-import RestaurantChoice from '../components/RestaurantChoice';
 
 
 class SelectionsContainer extends Component {
-
+    constructor(props) {
+        super(props);
+     
+        this.state = {
+          selections: []
+        };
+    }
     componentDidMount() {
-        this.props.fetchRestaurants();
+        fetch('http://localhost:3000/api/v1/restaurants/26/selections')
+            .then(response => response.json())
+            .then(orderData => this.setState({ selections: orderData.selections }))
     }
 
-    render() {
+    renderSelections = () => {
+        return this.state.selections.map(selection => {
+          return (
+            <div className="selection">
+              <h3>{ selection.order }</h3>
+            </div>
+          )
+        })
+      }
+     
+      render() {
         return (
-            <Router>
-                <div>
-                    <NavBar />
-                    <hr />
-                </div>
-                <div id="container">
-                    <Switch>
-                    <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
-                    <Route exact path="/allrestaurants" render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>}/>
-                    <Route exact path="/restaurantchoice" render={(props) => <RestaurantChoice {...props} names={this.props.name}/>}/>
-                    <Route exact path="/restaurant/:id" render={(props) => <OrderSelection id={props.match.params.id} /> } />
-                    <Route exact path="/" component={HomePage} />
-
-                    </Switch>
-                </div>
-            </Router>
+          <div className="selection-list">
+            { this.renderSelections() }
+          </div>
         )
+      }
     }
-
-}
-
-    const mapStateToProps = state => {
-        return {
-          restaurants: state.restaurants
-        }
-    }
-
-
-
-
-
-export default connect(mapStateToProps, {fetchRestaurants})(SelectionsContainer);
+export default SelectionsContainer;

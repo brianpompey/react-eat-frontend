@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import { addSelection } from '../actions/addSelection';
 
 class OrderSelection extends Component {
@@ -19,7 +20,8 @@ class OrderSelection extends Component {
         this.props.addSelection(this.state.order, this.props.id)
         this.setState({
           order: ''
-        })
+        });
+        this.props.history.push('/');
     }
 
     render() {
@@ -35,4 +37,4 @@ class OrderSelection extends Component {
     }
 }
 
-export default connect(null, {addSelection})(OrderSelection);
+export default withRouter(connect(null, {addSelection})(OrderSelection));
