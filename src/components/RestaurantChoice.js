@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar.js'
-import SelectionsContainer from '../containers/SelectionsContainer.js'
 
 class RestaurantChoice extends Component {
 
@@ -19,7 +18,6 @@ class RestaurantChoice extends Component {
           <div>
             <h6>Hello {props} !!</h6>
             <h6>What are you craving Today?</h6>
-            
             <SearchBar />
           </div>
         )

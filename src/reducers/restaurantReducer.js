@@ -19,10 +19,24 @@ export default function restaurantReducer(state = initialState, action) {
             return {
                 restaurant: action.payload
             }
-        case 'FILTER_BY_NAME':
-            return {
-                restaurants: action.payload
-            }
+        case 'ADD_SELECTION':
+            let restaurants = state.restaurants.map(restaurant => {
+                if (restaurant.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return restaurant
+                }
+            })
+            return {...state, restaurants: restaurants}
+        case 'DELETE_TRANSACTION':
+            let restaurantss = state.restaurants.map(restaurant => {
+                if (restaurant.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return account
+                }
+            })
+            return {...state, restaurants: restaurantss}
 
         default:
             return state 

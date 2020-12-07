@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import FilterResults from 'react-filter-search';
-import {fetchRestaurants} from '../actions/fetchRestaurants';
 import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 
