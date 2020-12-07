@@ -29,7 +29,7 @@ class RestaurantsContainer extends Component {
                     <Switch>
                     <Route exact path="/newrestaurant" component={NewRestaurantForm}/>
                     <Route exact path="/allrestaurants" render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>}/>
-                    <Route exact path="/restaurantchoice" render={(props) => <RestaurantChoice {...props} restaurants={this.props.restaurants}/>}/>
+                    <Route exact path="/restaurantchoice" render={(props) => <RestaurantChoice {...props} names={this.props.name}/>}/>
                     <Route exact path="/" component={HomePage} />
                     </Switch>
                 </div>
