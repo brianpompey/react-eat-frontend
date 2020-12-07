@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar.js'
+import SelectionsContainer from '../containers/SelectionsContainer.js'
 
 class RestaurantChoice extends Component {
 

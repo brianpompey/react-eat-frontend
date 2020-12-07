@@ -16,5 +16,5 @@ class SelectionsContainer extends Component {
   
   }
   
-  export default SelectionsContainer;
+export default SelectionsContainer;
 
