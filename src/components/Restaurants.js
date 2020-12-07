@@ -1,5 +1,4 @@
 import React from 'react'
-import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 const Restaurants = (props) => {
     console.log(props.restaurants);
@@ -8,9 +7,9 @@ const Restaurants = (props) => {
     <div>
       {props.restaurants.map(rest =>
         <>
-        <li style={{textAlign: 'center'}}>
+        <li key={rest.id} style={{textAlign: 'center'}}>
             
-            <a key={rest.id} href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}
+            <a href={rest.website} target="_blank" rel="noreferrer">{rest.name}</a> - {rest.cuisine} Cuisine in {rest.location}
         </li>
         <br />
         </>

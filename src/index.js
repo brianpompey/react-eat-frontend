@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'; 
 import './index.css';
 import App from './App';
-import combineReducers from './reducers/index.js';
+import combineReducers from './reducers';
 import restaurantReducer from './reducers/restaurantReducer.js';
 import reportWebVitals from './reportWebVitals';
 
