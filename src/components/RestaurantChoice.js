@@ -16,7 +16,7 @@ class RestaurantChoice extends Component {
     render(props) {
         return (
           <div>
-            <h6>Hello {props} !!</h6>
+            <h6>Hello {this.props.name} !!</h6>
             <h6>What are you craving Today?</h6>
             <SearchBar />
           </div>
