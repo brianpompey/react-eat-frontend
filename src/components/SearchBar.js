@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import FilterResults from 'react-filter-search';
-import { addSelection } from "../actions/addSelection.js";
-import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 
 class SearchBar extends Component {
