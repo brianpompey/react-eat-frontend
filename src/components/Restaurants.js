@@ -5,28 +5,38 @@ class Restaurants extends Component {
   constructor(props){
     super(props)
     this.state = {
-      restaurants: []
+      restaurants: [],
+      isSorted: false
     }
   }
 
   onClick1 = () => {
     this.setState({
-      restaurants: this.props.restaurants.sort((a, b) => a.name.localeCompare(b.name))
+      restaurants: this.props.restaurants.sort((a, b) => a.name.localeCompare(b.name)),
+      isSorted: true
     })
   }
 
   onClick2 = () => {
     this.setState({
-      restaurants: this.props.restaurants.sort((a, b) => a.id - b.id)
+      restaurants: this.props.restaurants.sort((a, b) => a.id - b.id),
+      isSorted: false
     })
   }
+
+  sortButton = () => {
+    const isSorted = this.state.isSorted;
+
+    return isSorted ? <button onClick={this.onClick2}>UNSORT</button> : <button onClick={this.onClick1}>SORT</button>
+  }
+
+
 
   render() {
   //  console.log(this.props.restaurants.sort((a, b) => a.name.localeCompare(b.name)))
     return (
       <div>
-        <button onClick={this.onClick1}>SORT</button>
-        <button onClick={this.onClick2}>UNSORT</button>
+        {this.sortButton()}
         <br/>
         {this.props.restaurants.map(rest =>
           <>

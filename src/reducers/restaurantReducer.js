@@ -19,6 +19,10 @@ export default function restaurantReducer(state = initialState, action) {
             return {
                 restaurant: action.payload
             }
+        case 'SORT_RESTAURANTS':
+            return {
+                restaurants: action.payload
+            }
         case 'ADD_SELECTION':
             let restaurants = state.restaurants.map(restaurant => {
                 if (restaurant.id === action.payload.id) {

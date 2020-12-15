@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {fetchRestaurants} from '../actions/fetchRestaurants'
+import {fetchRestaurants} from '../actions/fetchRestaurants';
+import {sortRestaurants} from '../actions/fetchRestaurants';
 import {
     BrowserRouter as Router,
     Switch,
