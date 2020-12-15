@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {fetchRestaurants} from '../actions/fetchRestaurants';
-import {sortRestaurants} from '../actions/fetchRestaurants';
+import {sortRestaurants} from '../actions/sortRestaurants';
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,9 +18,11 @@ class RestaurantsContainer extends Component {
 
     componentDidMount() {
         this.props.fetchRestaurants();
+        this.props.sortRestaurants();
     }
 
     render() {
+        console.log(this.props.sortedRestaurants)
         return (
             <Router>
                 <div>
@@ -44,12 +46,18 @@ class RestaurantsContainer extends Component {
 
     const mapStateToProps = state => {
         return {
-          restaurants: state.restaurants
+          restaurants: state.restaurants,
+          sortedRestaurants: state.sortedRestaurants
         }
+    }
+
+    const mapDispatchToProps = {
+        fetchRestaurants,
+        sortRestaurants
     }
 
 
 
 
 
-export default connect(mapStateToProps, {fetchRestaurants})(RestaurantsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer);
